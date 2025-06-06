@@ -1,9 +1,10 @@
 "use client";
-import About from "../components/About";
-import Projects from "../components/Projects";
+import Projects from "./section/Projects";
 import useVisibility from "@/app/hooks/useVisibility";
+import About from "./section/About";
+import Contact from "./section/Contact";
 
-const sections = [About, Projects]; // add Experience after About when possible
+const sections = [About, Projects, Contact]; // add Experience after About when possible
 const responseDelayInMS = 100;
 
 export default function Home() {

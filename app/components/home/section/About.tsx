@@ -1,6 +1,6 @@
 import Link from "next/link";
 import SectionHeader from "./SectionHeader";
-import { CardWrapper } from "./Wrappers";
+import { CardWrapper } from "../../layout/Wrappers";
 import { Quote } from "lucide-react";
 
 const Technology = {
@@ -13,15 +13,17 @@ const Technology = {
     { displayName: "HTML", iconName: "HTML5", hasColouredVariant: true },
     { displayName: "VSCode", iconName: "VSCode", hasColouredVariant: true },
     { displayName: "PyPI", iconName: "PyPI", hasColouredVariant: true },
-  ],
-  learning: [
     { displayName: "TypeScript", iconName: "TypeScript", hasColouredVariant: true },
-    { displayName: "next.js", iconName: "nextjs", hasColouredVariant: false },
-    { displayName: "React", iconName: "React", hasColouredVariant: true },
     { displayName: "CSS", iconName: "CSS3", hasColouredVariant: true },
     { displayName: "TailwindCSS", iconName: "tailwindcss", hasColouredVariant: true },
+  ],
+  learning: [
+    { displayName: "next.js", iconName: "nextjs", hasColouredVariant: false },
+    { displayName: "React", iconName: "React", hasColouredVariant: true },
     { displayName: "NodeJS", iconName: "nodejs", hasColouredVariant: true },
     { displayName: "Vercel", iconName: "Vercel", hasColouredVariant: false },
+    { displayName: "Flutter", iconName: "Flutter", hasColouredVariant: true },
+    { displayName: "Dart", iconName: "Dart", hasColouredVariant: true },
   ],
   wantToLearn: [
     { displayName: "Rust", iconName: "Rust", hasColouredVariant: false },
@@ -29,8 +31,6 @@ const Technology = {
     { displayName: "C++", iconName: "CPlusPlus", hasColouredVariant: true },
     { displayName: "Java", iconName: "Java", hasColouredVariant: true },
     { displayName: "MySQL", iconName: "MySQL", hasColouredVariant: true },
-    { displayName: "Lua", iconName: "Lua", hasColouredVariant: true },
-    { displayName: "Unity", iconName: "Unity", hasColouredVariant: false },
   ],
 };
 

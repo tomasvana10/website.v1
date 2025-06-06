@@ -1,6 +1,9 @@
 import SectionHeader from "./SectionHeader";
-import { CardWrapper } from "./Wrappers";
+import { CardWrapper } from "../../layout/Wrappers";
 
+/**
+ * currently unused
+ */
 export default function Experience() {
   return (
     <section>

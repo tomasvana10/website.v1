@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "./providers";
-import ScrollToTop from "./components/ScrollToTop";
-import SkipToContent from "./components/SkipToContent";
+import ScrollToTop from "./components/misc/ScrollToTop";
+import SkipToContent from "./components/misc/SkipToContent";
 
 export const metadata: Metadata = {
   title: {

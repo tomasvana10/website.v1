@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { GithubIcon } from "./SVG";
+import { GithubIcon } from "../misc/SVG";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

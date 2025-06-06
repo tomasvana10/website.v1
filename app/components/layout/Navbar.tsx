@@ -39,7 +39,7 @@ export default function Navbar() {
 
   return (
     <div
-      className={`navbar sticky top-0 z-10 backdrop-filter backdrop-blur-lg bg-opacity-30 shadow-sm transition-transform duration-300 ease-in-out
+      className={`navbar sticky top-0 z-10 backdrop-filter backdrop-blur-lg bg-opacity-30 h-20 shadow-sm transition-transform duration-300 ease-in-out
         ${scrollDirection === "down" && !scrolledToTop ? "-translate-y-full" : "translate-y-0"}
         bg-base-100 shadow-gray-300 dark:shadow-neutral`}>
       <div className="navbar-start">
@@ -67,7 +67,7 @@ function NavDropdown() {
       <div tabIndex={0} role="button" className="btn m-1">
         <Menu className="fill-current w-6 h-6" />
       </div>
-      <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+      <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-fit p-2 shadow">
         <NavLinks />
       </ul>
     </div>
@@ -89,7 +89,8 @@ function NavLinks() {
         <li key={index}>
           <a
             href={`/home/#${link.toLowerCase()}`}
-            onClick={(e) => handleSmoothScroll(e, `#${link.toLowerCase()}`)}>
+            onClick={(e) => handleSmoothScroll(e, `#${link.toLowerCase()}`)}
+            className="w-32 text-center btn btn-ghost flex items-center justify-center">
             <span>{link}</span>
           </a>
         </li>

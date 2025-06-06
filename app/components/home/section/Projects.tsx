@@ -1,12 +1,12 @@
 import Image from "next/image";
 import SectionHeader from "./SectionHeader";
-import { CardWrapper } from "./Wrappers";
-import { GithubIcon } from "./SVG";
+import { CardWrapper } from "../../layout/Wrappers";
+import { GithubIcon } from "../../misc/SVG";
 import Link from "next/link";
-import "../SlantedText.css";
+import "../../../css/SlantedText.css";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import Loading from "./Loading";
+import Loading from "../../misc/Loading";
 import { ExternalLink } from "lucide-react";
 
 const projects: {

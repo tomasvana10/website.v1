@@ -1,6 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
+/**
+ * currently unused
+ */
 export default function MouseSpotlight() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 

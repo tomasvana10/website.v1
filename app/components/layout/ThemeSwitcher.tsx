@@ -1,8 +1,8 @@
 "use client";
 import { useTheme } from "next-themes";
 import { KeyboardEvent, ChangeEvent, useState, useEffect } from "react";
-import { MoonIcon, SunIcon } from "./SVG";
-import Loading from "./Loading";
+import { MoonIcon, SunIcon } from "../misc/SVG";
+import Loading from "../misc/Loading";
 
 export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);

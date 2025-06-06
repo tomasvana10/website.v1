@@ -1,6 +1,6 @@
 /* styles from https://codepen.io/Jintos/pen/OJKodm */
 .clip-text {
-  background-image: url(../public/images/galaxy.jpg);
+  background-image: url(../../public/images/galaxy.jpg);
   font-weight: bold;
   line-height: 1;
   position: relative;

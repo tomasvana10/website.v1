@@ -1,6 +1,6 @@
 "use client";
 import { ParallaxBanner, EasingPreset, ParallaxProvider } from "react-scroll-parallax";
-import "../ClipText.css";
+import "../../css/ClipText.css";
 
 export default function Banner() {
   return (
