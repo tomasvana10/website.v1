@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { GithubIcon } from "../misc/SVG";
+import { getRepoVersion } from "@/app/utils/main";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer bg-zinc-300 dark:bg-zinc-900 p-4 footer-center">
       <div className="flex flex-row align-text-top gap-x-10">
@@ -37,9 +39,8 @@ function Version() {
       Version{" "}
       {(async () => {
         "use server";
-        return await fetch(`https://api.github.com/repos/tomasvana10/website/tags`)
-          .then((res) => res.json())
-          .then((tags) => tags[0]?.name.slice(1) ?? "not found");
+        const ver = await getRepoVersion();
+        return ver || "not found";
       })()}
     </span>
   );

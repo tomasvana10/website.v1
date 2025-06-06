@@ -3,6 +3,7 @@ import Projects from "./section/Projects";
 import useVisibility from "@/app/hooks/useVisibility";
 import About from "./section/About";
 import Contact from "./section/Contact";
+import SectionHeader from "./section/SectionHeader";
 
 const sections = [About, Projects, Contact]; // add Experience after About when possible
 const responseDelayInMS = 100;
@@ -23,7 +24,10 @@ export default function Home() {
             className={`transition-all duration-700 ${
               visibility[index] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-24"
             }`}>
-            <SectionComponent />
+            <section>
+              <SectionHeader name={SectionComponent.displayName} number={index + 1} />
+              <SectionComponent />
+            </section>
           </div>
         );
       })}

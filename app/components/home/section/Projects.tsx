@@ -1,9 +1,8 @@
 import Image from "next/image";
-import SectionHeader from "./SectionHeader";
 import { CardWrapper } from "../../layout/Wrappers";
 import { GithubIcon } from "../../misc/SVG";
 import Link from "next/link";
-import "../../../css/SlantedText.css";
+import "@/app/css/SlantedText.css";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import Loading from "../../misc/Loading";
@@ -103,32 +102,33 @@ const projects: {
   },
 ];
 
+type Project = (typeof projects)[number];
+
 const featuredProjects = ["xpuz", "ausvote"];
 
 export default function Projects() {
   return (
-    <section>
-      <SectionHeader name="Projects" number={2} />
-      <CardWrapper>
-        {featuredProjects
-          .map((featuredName) => projects.find((project) => project.name === featuredName))
+    <CardWrapper>
+      {featuredProjects
+        .map((featuredName) => projects.find((project) => project.name === featuredName))
+        .map((projectData, index) => (
+          <FeaturedProject projectData={projectData!} key={index} />
+        ))}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {projects
+          .filter((project) => !featuredProjects.includes(project.name))
+          .sort((a, b) => (a.name > b.name ? 1 : -1))
           .map((projectData, index) => (
-            <FeaturedProject projectData={projectData!} key={index} />
+            <RegularProject key={index} projectData={projectData} />
           ))}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {projects
-            .filter((project) => !featuredProjects.includes(project.name))
-            .sort((a, b) => (a.name > b.name ? 1 : -1))
-            .map((projectData, index) => (
-              <RegularProject key={index} projectData={projectData} />
-            ))}
-        </div>
-      </CardWrapper>
-    </section>
+      </div>
+    </CardWrapper>
   );
 }
 
-function RegularProject({ projectData }: { projectData: (typeof projects)[number] }) {
+Projects.displayName = "Projects"
+
+function RegularProject({ projectData }: { projectData: Project }) {
   return (
     <div className="card-bordered gap-4 relative rounded-md">
       <div className="absolute right-3 top-3">
@@ -148,7 +148,7 @@ function RegularProject({ projectData }: { projectData: (typeof projects)[number
   );
 }
 
-function FeaturedProject({ projectData }: { projectData: (typeof projects)[number] }) {
+function FeaturedProject({ projectData }: { projectData: Project }) {
   const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
 
@@ -199,8 +199,8 @@ function ProjectLinks({
   srcCodeLink,
   checkItOutLink,
 }: {
-  srcCodeLink: string | null;
-  checkItOutLink: string | null;
+  srcCodeLink: Project["srcCodeLink"];
+  checkItOutLink: Project["checkItOutLink"];
 }) {
   return (
     <div className="flex gap-2">
