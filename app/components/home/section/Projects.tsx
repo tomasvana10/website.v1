@@ -95,7 +95,7 @@ const projects: {
 
 type Project = (typeof projects)[number];
 
-const featuredProjects = ["xpuz", "ausvote"];
+const featuredProjects = ["xpuz"];
 
 export default function Projects() {
   return (
