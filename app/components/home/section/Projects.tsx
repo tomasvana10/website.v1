@@ -27,15 +27,6 @@ const projects: {
     hasLightImage: false,
   },
   {
-    name: "ausvote",
-    description: "A voting website for the geopolitical Minecraft server EarthMC.",
-    technologyBadges: ["next.js", "TypeScript", "TailwindCSS", "Vercel", "PostgreSQL", "NextAuth.js"],
-    srcCodeLink: null,
-    checkItOutLink: "https://elections.australiaemc.net",
-    hasPreviewImage: true,
-    hasLightImage: true,
-  },
-  {
     name: "wordlemini",
     description: "A simple version of Wordle made for the command line.",
     technologyBadges: ["Python", "Textual", "PyPI"],
